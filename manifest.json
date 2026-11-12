@@ -1,0 +1,10 @@
+{
+  "name": "Waqas Khan — Portfolio",
+  "short_name": "WK Portfolio",
+  "description": "Team Lead & Principal Architect at TheKhanDev. Harvard Certified Full-Stack Systems & AI Engineer.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary"
+}

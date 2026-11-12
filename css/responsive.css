@@ -1,0 +1,100 @@
+/* ============ TABLET (≤ 992px) ============ */
+@media (max-width: 992px) {
+  .hero-inner, .about-content, .contact-container {
+    grid-template-columns: 1fr; gap: 3rem;
+  }
+  .hero { text-align: center; padding: 10rem 0 6rem; }
+  .hero-buttons, .hero-socials, .hero-badges { justify-content: center; }
+  .hero-description { margin-left: auto; margin-right: auto; }
+  .hero-image { order: -1; }
+  .image-wrapper { width: 300px; height: 300px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .exp-timeline { padding-left: 2rem; }
+  .exp-timeline::before { left: 8px; }
+  .exp-item::before { left: -2.2rem; width: 16px; height: 16px; top: 1.75rem; }
+  .exp-item { padding: 1.5rem; }
+  .cert-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+}
+
+/* ============ MOBILE (≤ 768px) ============ */
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; }
+  .nav-menu {
+    position: fixed; top: var(--nav-height); right: -100%;
+    width: 80%; max-width: 320px;
+    height: calc(100vh - var(--nav-height));
+    background: var(--card-bg); flex-direction: column;
+    justify-content: flex-start; align-items: flex-start;
+    padding: 2rem; gap: 1.25rem;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+    border-left: 1px solid var(--border-color); z-index: 999;
+  }
+  .nav-menu.active { right: 0; }
+  .nav-menu .nav-link { font-size: 1.05rem; }
+  .container { padding: 0 1.25rem; }
+  .section { padding: 4rem 0; }
+  .about-info { grid-template-columns: 1fr; }
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .floating-badge { display: none; }
+  .image-wrapper { width: 260px; height: 260px; }
+  .stat-number { font-size: 2rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .contact-form { padding: 1.5rem; }
+  .back-to-top { bottom: 1rem; right: 1rem; width: 42px; height: 42px; }
+  .exp-tabs { gap: 0.5rem; }
+  .exp-tab { padding: 0.7rem 1.1rem; font-size: 0.85rem; }
+  .exp-tab i { font-size: 0.9rem; }
+  .exp-timeline { padding-left: 1.75rem; }
+  .exp-timeline::before { left: 6px; width: 2px; }
+  .exp-item { padding: 1.25rem; border-radius: var(--radius-sm); }
+  .exp-item::before {
+    left: -1.9rem; top: 1.5rem;
+    width: 14px; height: 14px; border-width: 3px;
+    box-shadow: 0 0 0 3px var(--bg-color);
+  }
+  .exp-item:hover { transform: none; }
+  .exp-role { font-size: 1.1rem; }
+  .exp-desc { font-size: 0.88rem; }
+  .exp-highlights li { font-size: 0.84rem; }
+  .exp-item-head { margin-bottom: 0.6rem; }
+  .cert-grid { grid-template-columns: 1fr; }
+  .portfolio-toolbar { flex-direction: column; align-items: stretch; }
+  .portfolio-toolbar-actions { justify-content: space-between; }
+  .portfolio-sort { flex: 1; }
+  .portfolio-search kbd { display: none; }
+  .portfolio-grid.list-view .portfolio-item { grid-template-columns: 1fr; }
+  .portfolio-grid.list-view .portfolio-img { min-height: 180px; }
+  .portfolio-grid.list-view .portfolio-overlay { opacity: 1; }
+}
+
+/* ============ SMALL PHONE (≤ 480px) ============ */
+@media (max-width: 480px) {
+  .hero-title { font-size: 2.2rem; }
+  .hero-buttons { flex-direction: column; }
+  .hero-buttons .btn { width: 100%; justify-content: center; }
+  .portfolio-overlay { opacity: 1; background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.85)); }
+  .exp-tabs { flex-direction: column; align-items: stretch; }
+  .exp-tab { justify-content: center; width: 100%; }
+  .exp-item { padding: 1rem; }
+  .exp-date { font-size: 0.72rem; }
+  .exp-type { font-size: 0.65rem; }
+  .exp-role { font-size: 1rem; }
+  .exp-company { font-size: 0.85rem; }
+  .exp-highlights li { padding-left: 1.25rem; font-size: 0.82rem; }
+  .cert-tabs { gap: 0.35rem; }
+  .cert-tab { font-size: 0.72rem; padding: 0.45rem 0.75rem; }
+  .view-toggle button { padding: 0.6rem 0.7rem; }
+}
+
+/* ============ REDUCED MOTION ============ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}

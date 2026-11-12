@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waqas Khan | Team Lead & Principal Architect | TheKhanDev</title>
+
+  <meta name="description" content="Waqas Khan — Team Lead & Principal Architect at TheKhanDev. Harvard Certified Full-Stack Systems & AI Engineer from Peshawar, Pakistan. 5+ years building scalable enterprise software.">
+  <meta name="author" content="Waqas Khan">
+  <meta name="theme-color" id="metaThemeColor" content="#2563eb">
+  <meta name="keywords" content="Waqas Khan, TheKhanDev, Full Stack Developer, Systems Architect, AI Engineer, Harvard Certified, Peshawar, Pakistan, React, Next.js, TypeScript, Python">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Waqas Khan | Team Lead & Principal Architect">
+  <meta property="og:description" content="Harvard Certified Full-Stack Systems & AI Engineer. 50+ enterprise projects delivered.">
+  <meta property="og:image" content="assets/images/waqas-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='62' font-family='Arial,sans-serif' font-size='44' font-weight='900' fill='white' text-anchor='middle'%3EWK%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <noscript>
+    <style>
+      #preloader{display:none!important}
+      .nav-toggle{display:flex!important}
+      .reveal{opacity:1!important;transform:none!important}
+    </style>
+  </noscript>
+</head>
+<body>
+
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">W<span>K</span></div>
+      <div class="preloader-bar"><span></span></div>
+      <div class="preloader-percent" id="preloaderPercent">0%</div>
+    </div>
+  </div>
+
+  <div id="scrollProgress" class="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">Waqas<span>Khan</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-overlay" id="navOverlay"></div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+      <span class="blob blob-3"></span>
+      <canvas id="particles" class="particles" aria-hidden="true"></canvas>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <p class="hero-subtitle"><span class="wave">👋</span> Hello, I'm</p>
+        <h1 class="hero-title">Waqas Khan</h1>
+        <h2 class="hero-role">
+          <span class="typed-text" id="typedText"></span><span class="cursor-blink">|</span>
+        </h2>
+        <p class="hero-description">
+          <strong>Team Lead &amp; Principal Architect</strong> at TheKhanDev. Harvard Certified Full-Stack Systems &amp; AI Engineer. I architect high-performance, secure, and horizontally scalable web, mobile, and AI-driven systems.
+        </p>
+        <div class="hero-badges">
+          <span class="hero-badge"><i class="fas fa-certificate"></i> Harvard Certified</span>
+          <span class="hero-badge"><i class="fas fa-briefcase"></i> 5+ Years</span>
+          <span class="hero-badge"><i class="fas fa-rocket"></i> 50+ Projects</span>
+        </div>
+        <div class="hero-buttons">
+          <a href="#portfolio" class="btn btn-primary"><i class="fas fa-briefcase"></i> View My Work</a>
+          <a href="#contact" class="btn btn-secondary"><i class="fas fa-paper-plane"></i> Contact Me</a>
+          <a href="CV.html" class="btn btn-outline"><i class="fas fa-file-alt"></i> View CV</a>
+        </div>
+        <div class="hero-socials" id="heroSocials"></div>
+      </div>
+      <div class="hero-image">
+        <div class="image-wrapper">
+          <div class="image-glow"></div>
+          <img src="assets/images/waqas-hero.jpg" alt="Waqas Khan portrait" loading="eager" width="380" height="380">
+          <div class="image-frame"></div>
+        </div>
+        <div class="floating-badge badge-1"><i class="fas fa-code"></i> Architect</div>
+        <div class="floating-badge badge-2"><i class="fas fa-brain"></i> AI Engineer</div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-hint" aria-label="Scroll to about"><i class="fas fa-chevron-down"></i></a>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section" aria-label="Statistics">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-icon"><i class="fas fa-briefcase"></i></div><h3 class="stat-number" data-target="5">0</h3><p class="stat-label">Years Experience</p></div>
+        <div class="stat-card"><div class="stat-icon"><i class="fas fa-check-circle"></i></div><h3 class="stat-number" data-target="50">0</h3><p class="stat-label">Projects Delivered</p></div>
+        <div class="stat-card"><div class="stat-icon"><i class="fas fa-user-graduate"></i></div><h3 class="stat-number" data-target="1000">0</h3><p class="stat-label">Developers Trained</p></div>
+        <div class="stat-card"><div class="stat-icon"><i class="fas fa-layer-group"></i></div><h3 class="stat-number" data-target="30">0</h3><p class="stat-label">Technologies</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Executive Technical Profile</h2>
+      </div>
+      <div class="about-content">
+        <div class="about-image reveal">
+          <img src="assets/images/waqas-image.jpg" alt="Waqas Khan" loading="lazy" width="500" height="500">
+          <div class="about-image-frame"></div>
+        </div>
+        <div class="about-text reveal">
+          <p>Elite <strong>Full-Stack Software Engineer</strong>, <strong>System Architect</strong>, and <strong>Technical Educator</strong> with over 5 years of production-grade expertise engineering high-performance, secure, and horizontally scalable web, mobile, and AI-driven architectures.</p>
+          <p>As the <strong>Founder and Principal Engineer of TheKhanDev</strong>, I have spearheaded the design, optimization, and successful deployment of <strong>50+ enterprise and consumer software systems</strong> for global clientele — consistently solving intricate technical challenges including memory leaks, high-latency bottlenecks, database indexing failures, and unoptimized Core Web Vitals.</p>
+          <p>Beyond core engineering, I operate as a technical mentor and educator, having trained over <strong>1,000 aspiring software developers</strong> in advanced MERN stack mechanics, system design paradigms, modern Python backends, and robust cybersecurity engineering.</p>
+          <div class="about-info">
+            <div class="info-item"><span class="info-label">Full Name</span><span class="info-value">Waqas Khan</span></div>
+            <div class="info-item"><span class="info-label">Role</span><span class="info-value">Team Lead &amp; Principal Architect</span></div>
+            <div class="info-item">
+              <span class="info-label">Email</span>
+              <span class="info-value-row">
+                <a href="mailto:waqaskhank128@gmail.com" class="info-value">waqaskhank128@gmail.com</a>
+                <button class="copy-btn" data-copy="waqaskhank128@gmail.com" aria-label="Copy email"><i class="fas fa-copy"></i></button>
+              </span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Phone</span>
+              <span class="info-value-row"><a href="tel:+923197742317" class="info-value">+92 3441092910</a></span>
+            </div>
+            <div class="info-item"><span class="info-label">Location</span><span class="info-value">Islamabad / Peshawar, PK</span></div>
+            <div class="info-item"><span class="info-label">Availability</span><span class="info-value available"><span class="dot"></span> Open for work</span></div>
+          </div>
+          <div class="social-links" id="socialLinksContainer"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">What I Do</span>
+        <h2 class="section-title">Services I Offer</h2>
+        <p class="section-subtitle">Bringing ideas to life with modern tools and best practices</p>
+      </div>
+      <div class="services-grid" id="servicesGrid"></div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">My Skills</span>
+        <h2 class="section-title">Technologies I Work With</h2>
+      </div>
+      <div class="skills-container" id="skillsContainer"></div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="section portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">My Projects</h2>
+        <p class="section-subtitle">Search, filter, and explore my work — all source code is private</p>
+      </div>
+
+      <div class="portfolio-toolbar reveal">
+        <div class="portfolio-search">
+          <i class="fas fa-search"></i>
+          <input type="text" id="projectSearch" placeholder="Search projects, tech, or keywords…" aria-label="Search projects">
+          <kbd>/</kbd>
+        </div>
+        <div class="portfolio-toolbar-actions">
+          <select id="projectSort" class="portfolio-sort" aria-label="Sort projects">
+            <option value="featured">★ Featured first</option>
+            <option value="newest">🆕 Newest first</option>
+            <option value="az">🔤 A → Z</option>
+          </select>
+          <div class="view-toggle" role="group" aria-label="View mode">
+            <button data-view="grid" class="active" aria-label="Grid view" title="Grid view"><i class="fas fa-th"></i></button>
+            <button data-view="list" aria-label="List view" title="List view"><i class="fas fa-list"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-filter" id="portfolioFilterContainer" role="tablist" aria-label="Project filters"></div>
+      <div class="tech-chips" id="techChips" aria-label="Filter by technology"></div>
+      <p class="project-count" id="projectCount"></p>
+      <div class="portfolio-grid" id="portfolioGridContainer"></div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE & EDUCATION -->
+  <section class="section experience" id="experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Journey</span>
+        <h2 class="section-title">Experience &amp; Education</h2>
+        <p class="section-subtitle">A track record of professional growth, technical excellence, and academic achievement</p>
+      </div>
+
+      <div class="exp-tabs reveal" role="tablist" aria-label="Experience and education tabs">
+        <button class="exp-tab active" data-tab="experience" role="tab" aria-selected="true" aria-controls="panel-experience"><i class="fas fa-briefcase"></i> Experience</button>
+        <button class="exp-tab" data-tab="education" role="tab" aria-selected="false" aria-controls="panel-education"><i class="fas fa-graduation-cap"></i> Education</button>
+        <button class="exp-tab" data-tab="certifications" role="tab" aria-selected="false" aria-controls="panel-certifications"><i class="fas fa-certificate"></i> Certifications</button>
+      </div>
+
+      <div class="exp-panel active" id="panel-experience" role="tabpanel">
+        <div class="exp-timeline" id="experienceTimeline"></div>
+      </div>
+      <div class="exp-panel" id="panel-education" role="tabpanel">
+        <div class="exp-timeline" id="educationTimeline"></div>
+      </div>
+      <div class="exp-panel" id="panel-certifications" role="tabpanel">
+        <div class="cert-tabs" id="certCategoryTabs"></div>
+        <p class="cert-count"><span id="certCountBadge">0</span> certifications</p>
+        <div class="cert-grid" id="certificationsGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">What People Say</h2>
+      </div>
+      <div class="testimonials-grid" id="testimonialsGrid"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Contact</span>
+        <h2 class="section-title">Get In Touch</h2>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info reveal">
+          <h3>Let's work together!</h3>
+          <p>I'm always open to discussing new opportunities, creative projects, or just having a friendly chat about technology.</p>
+          <div class="contact-details">
+            <div class="contact-item"><i class="fas fa-envelope"></i><div><h4>Email</h4><a href="mailto:waqaskhank128@gmail.com">waqaskhank128@gmail.com</a></div></div>
+            <div class="contact-item"><i class="fas fa-phone"></i><div><h4>Phone</h4><a href="tel:+923197742317">+92 3441092910</a></div></div>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><h4>Location</h4><p>Islamabad / Peshawar, Pakistan</p></div></div>
+            <div class="contact-item"><i class="fas fa-clock"></i><div><h4>Response Time</h4><p>Usually within 24 hours</p></div></div>
+          </div>
+          <a href="https://wa.me/923197742317" target="_blank" rel="noopener" class="direct-contact-btn"><i class="fab fa-whatsapp"></i> Message on WhatsApp</a>
+        </div>
+        <div class="contact-form reveal">
+          <form id="contactForm" action="https://formspree.io/f/xbjnqpyz" method="POST" novalidate>
+            <div class="form-group">
+              <label for="name" class="sr-only">Your name</label>
+              <input type="text" name="name" id="name" placeholder="Your Name" aria-label="Your name" required autocomplete="name">
+              <span class="form-error" data-for="name"></span>
+            </div>
+            <div class="form-group">
+              <label for="email" class="sr-only">Your email</label>
+              <input type="email" name="_replyto" id="email" placeholder="Your Email" aria-label="Your email" required autocomplete="email">
+              <span class="form-error" data-for="email"></span>
+            </div>
+            <div class="form-group">
+              <label for="subject" class="sr-only">Subject</label>
+              <input type="text" name="subject" id="subject" placeholder="Subject" aria-label="Subject" required>
+              <span class="form-error" data-for="subject"></span>
+            </div>
+            <div class="form-group">
+              <label for="message" class="sr-only">Message</label>
+              <textarea name="message" id="message" placeholder="Your Message" aria-label="Message" rows="5" required></textarea>
+              <span class="form-error" data-for="message"></span>
+            </div>
+            <input type="hidden" name="_subject" value="New Contact Form Submission - Waqas Khan Portfolio">
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+            <button type="submit" class="btn btn-primary btn-block">
+              <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
+              <span class="btn-loading" style="display:none"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="logo">Waqas<span>Khan</span></a>
+          <p>Team Lead &amp; Principal Architect at TheKhanDev. Building resilient software that drives measurable business ROI.</p>
+          <div class="social-links" id="footerSocialsContainer"></div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Full-Stack Development</a></li>
+            <li><a href="#services">Systems Architecture</a></li>
+            <li><a href="#services">AI Engineering</a></li>
+            <li><a href="#services">Technical Mentorship</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Get In Touch</h4>
+          <p><i class="fas fa-envelope"></i> waqaskhank128@gmail.com</p>
+          <p><i class="fas fa-phone"></i> +92 3441092910</p>
+          <p><i class="fas fa-map-marker-alt"></i> Islamabad / Peshawar, PK</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> Waqas Khan. All rights reserved.</p>
+        <p>Made with <i class="fas fa-heart"></i> in Pakistan · TheKhanDev</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 40 40" class="progress-ring" aria-hidden="true">
+      <circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="2" opacity="0.15"/>
+      <circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-dasharray="106.8" stroke-dashoffset="106.8" id="progressCircle"
+              stroke-linecap="round" transform="rotate(-90 20 20)"/>
+    </svg>
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <div class="modal" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-overlay" data-close></div>
+    <div class="modal-content">
+      <button class="modal-close" data-close aria-label="Close modal"><i class="fas fa-times"></i></button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/effects.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
