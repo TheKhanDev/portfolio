@@ -25,34 +25,59 @@ const portfolioData = {
     { icon: "fas fa-chalkboard-user", title: "Technical Mentorship",   desc: "Training developers in advanced MERN, system design, Python backends, and cybersecurity fundamentals." }
   ],
 
+  /* ==== SKILLS — Enhanced with icons, accents, descriptions ==== */
   skillsCategories: [
     {
-      title: "Frontend Architecture", icon: "fas fa-code",
+      title: "Frontend Architecture",
+      icon: "fas fa-laptop-code",
+      accent: "blue",
+      description: "Modern component-based UI systems with SSR and edge rendering",
       skills: [
-        { name: "React / Next.js 14/15", percentage: 95 },
-        { name: "TypeScript (Advanced)", percentage: 92 },
-        { name: "Tailwind / UI Systems", percentage: 90 },
-        { name: "Redux / Context API",    percentage: 88 }
+        { name: "React / Next.js 14/15", percentage: 95, icon: "fab fa-react" },
+        { name: "TypeScript (Advanced)", percentage: 92, icon: "fas fa-code" },
+        { name: "Tailwind / UI Systems", percentage: 90, icon: "fab fa-css3-alt" },
+        { name: "Redux / Context API",    percentage: 88, icon: "fas fa-layer-group" }
       ]
     },
     {
-      title: "Backend & API Systems", icon: "fas fa-server",
+      title: "Backend & API Systems",
+      icon: "fas fa-server",
+      accent: "purple",
+      description: "Scalable microservices with secure, documented REST endpoints",
       skills: [
-        { name: "Node.js / Express / NestJS", percentage: 93 },
-        { name: "Python (Django/FastAPI)",    percentage: 90 },
-        { name: "RESTful / WebSockets",       percentage: 88 },
-        { name: "JWT / OAuth / Security",     percentage: 85 }
+        { name: "Node.js / Express / NestJS", percentage: 93, icon: "fab fa-node-js" },
+        { name: "Python (Django/FastAPI)",    percentage: 90, icon: "fab fa-python" },
+        { name: "RESTful / WebSockets",       percentage: 88, icon: "fas fa-exchange-alt" },
+        { name: "JWT / OAuth / Security",     percentage: 85, icon: "fas fa-shield-alt" }
       ]
     },
     {
-      title: "Databases & Cloud", icon: "fas fa-database",
+      title: "Databases & Cloud",
+      icon: "fas fa-database",
+      accent: "teal",
+      description: "Data modeling, indexing, and cloud deployments at scale",
       skills: [
-        { name: "PostgreSQL / MongoDB",        percentage: 90 },
-        { name: "MySQL / Firebase / Supabase", percentage: 87 },
-        { name: "Docker & CI/CD",              percentage: 84 },
-        { name: "AWS / Vercel / Netlify",      percentage: 82 }
+        { name: "PostgreSQL / MongoDB",        percentage: 90, icon: "fas fa-database" },
+        { name: "MySQL / Firebase / Supabase", percentage: 87, icon: "fas fa-fire" },
+        { name: "Docker & CI/CD",              percentage: 84, icon: "fab fa-docker" },
+        { name: "AWS / Vercel / Netlify",      percentage: 82, icon: "fab fa-aws" }
       ]
     }
+  ],
+
+  /* ==== TOOLS — Extra tech chips shown below the skill cards ==== */
+  toolsChips: [
+    "Git", "GitHub Actions", "Postman", "Vite", "Webpack", "PyInstaller",
+    "Lighthouse", "WebPageTest", "Figma", "Linux", "Nginx", "Redis",
+    "GraphQL", "WebSockets", "Jest", "Playwright"
+  ],
+
+  /* ==== SKILLS STATS STRIP ==== */
+  skillsStats: [
+    { value: 12, suffix: "+", label: "Core Technologies" },
+    { value: 3,  suffix: "",  label: "Full-Stack Domains" },
+    { value: 90, suffix: "%", label: "Avg. Proficiency" },
+    { value: 5,  suffix: "+", label: "Years Hands-on" }
   ],
 
   portfolioCategories: [
@@ -68,11 +93,7 @@ const portfolioData = {
   projects: [
     /* ============ EXISTING PROJECTS ============ */
     {
-      id: 1,
-      title: "Quran Web Application",
-      category: "islamic",
-      featured: true,
-      date: "2025-06",
+      id: 1, title: "Quran Web Application", category: "islamic", featured: true, date: "2025-06",
       image: "assets/images/Quraan.webp",
       infoTitle: "Quran Web Application",
       infoDesc: "Complete Quran reading application with multiple features and surah navigation, built with modern JavaScript.",
@@ -80,11 +101,7 @@ const portfolioData = {
       tags: ["HTML5", "CSS3", "JavaScript", "Quran API"]
     },
     {
-      id: 2,
-      title: "Quran Reading App",
-      category: "islamic",
-      featured: true,
-      date: "2025-05",
+      id: 2, title: "Quran Reading App", category: "islamic", featured: true, date: "2025-05",
       image: "assets/images/quraan.jpg",
       infoTitle: "Quran Reading App",
       infoDesc: "Interactive Quran reading application with navigation controls and mobile-friendly interface.",
@@ -92,21 +109,15 @@ const portfolioData = {
       tags: ["HTML5", "CSS3", "JavaScript", "Mobile Friendly"]
     },
     {
-      id: 3,
-      title: "HHMI Brothers Organization",
-      category: "web",
-      date: "2025-04",
-      image: "assets/images/online-store.webp",
+      id: 3, title: "HHMI Brothers Organization", category: "web", date: "2025-04",
+      image: "assets/images/online-store.png",
       infoTitle: "HHMI Brothers Organization",
       infoDesc: "Website for HHMI Brothers organization with information, resources, and responsive design.",
       demoUrl: "https://thekhandev.github.io/HHMIBrothers/",
       tags: ["HTML", "CSS", "JavaScript", "Responsive"]
     },
     {
-      id: 4,
-      title: "Quotes Generator",
-      category: "web javascript",
-      date: "2025-03",
+      id: 4, title: "Quotes Generator", category: "web javascript", date: "2025-03",
       image: "assets/images/quotes.png",
       infoTitle: "Quotes Generator",
       infoDesc: "Application that displays random inspirational quotes with sharing features and API integration.",
@@ -114,10 +125,7 @@ const portfolioData = {
       tags: ["JavaScript", "API", "CSS", "DOM Manipulation"]
     },
     {
-      id: 5,
-      title: "Funny Chat Bot",
-      category: "javascript",
-      date: "2025-02",
+      id: 5, title: "Funny Chat Bot", category: "javascript", date: "2025-02",
       image: "assets/images/bot.jpg",
       infoTitle: "Funny Chat Bot",
       infoDesc: "Interactive chatbot that responds with humorous replies and jokes using AI logic.",
@@ -125,10 +133,7 @@ const portfolioData = {
       tags: ["JavaScript", "Chatbot", "AI Logic", "User Input"]
     },
     {
-      id: 6,
-      title: "Rock Paper Scissors",
-      category: "games",
-      date: "2024-12",
+      id: 6, title: "Rock Paper Scissors", category: "games", date: "2024-12",
       image: "assets/images/rock-paper-scissors.jpg",
       infoTitle: "Rock Paper Scissors Game",
       infoDesc: "Classic game with score tracking and computer AI opponent built in pure JavaScript.",
@@ -136,10 +141,7 @@ const portfolioData = {
       tags: ["JavaScript", "Game Logic", "Randomization", "Score System"]
     },
     {
-      id: 7,
-      title: "Classic Snake Game",
-      category: "games",
-      date: "2024-11",
+      id: 7, title: "Classic Snake Game", category: "games", date: "2024-11",
       image: "assets/images/snake.jpeg",
       infoTitle: "Classic Snake Game",
       infoDesc: "Retro snake game with increasing difficulty and score system using HTML5 Canvas.",
@@ -147,13 +149,9 @@ const portfolioData = {
       tags: ["JavaScript", "Canvas", "Game Development", "Keyboard Events"]
     },
 
-    /* ============ NEW PROJECTS (7) ============ */
+    /* ============ NEW PROJECTS ============ */
     {
-      id: 8,
-      title: "TKPython",
-      category: "python web",
-      featured: true,
-      date: "2025-07",
+      id: 8, title: "TKPython", category: "python web", featured: true, date: "2025-07",
       image: "assets/images/thekhandev-logo.jpg",
       infoTitle: "TKPython — Python Learning Platform",
       infoDesc: "Interactive Python learning platform deployed on Vercel, featuring structured lessons, code challenges, and progress tracking.",
@@ -161,10 +159,7 @@ const portfolioData = {
       tags: ["Python", "Vercel", "Next.js", "Education"]
     },
     {
-      id: 9,
-      title: "City Actor Game",
-      category: "games",
-      date: "2025-01",
+      id: 9, title: "City Actor Game", category: "games", date: "2025-01",
       image: "assets/images/city-actor-game.jpg",
       infoTitle: "City Actor Game",
       infoDesc: "Interactive browser-based guessing game where players identify actors by their cities — pure JavaScript game logic.",
@@ -172,10 +167,7 @@ const portfolioData = {
       tags: ["JavaScript", "Game", "HTML5", "CSS3"]
     },
     {
-      id: 10,
-      title: "Butcher Shop",
-      category: "web",
-      date: "2025-03",
+      id: 10, title: "Butcher Shop", category: "web", date: "2025-03",
       image: "assets/images/butcher-shop.png",
       infoTitle: "Butcher Shop — E-Commerce Site",
       infoDesc: "Modern, responsive e-commerce website for a butcher shop with product listings, cart simulation, and clean UI.",
@@ -183,10 +175,7 @@ const portfolioData = {
       tags: ["HTML", "CSS", "JavaScript", "E-Commerce"]
     },
     {
-      id: 11,
-      title: "Task Manager Web App",
-      category: "web javascript",
-      date: "2025-05",
+      id: 11, title: "Task Manager Web App", category: "web javascript", date: "2025-05",
       image: "assets/images/task manager.png",
       infoTitle: "Task Manager Web App",
       infoDesc: "Full-featured task management application with add/edit/delete tasks, priority sorting, and persistent storage via localStorage.",
@@ -194,10 +183,7 @@ const portfolioData = {
       tags: ["JavaScript", "LocalStorage", "CRUD", "UI/UX"]
     },
     {
-      id: 12,
-      title: "TameerHub",
-      category: "web",
-      date: "2025-08",
+      id: 12, title: "TameerHub", category: "web", date: "2025-08",
       image: "assets/images/tameerhub.png",
       infoTitle: "TameerHub — Construction Platform",
       infoDesc: "Construction and contractor marketplace platform deployed on Vercel — connecting clients with professionals, project management, and service listings.",
@@ -205,10 +191,7 @@ const portfolioData = {
       tags: ["Next.js", "Vercel", "Marketplace", "TypeScript"]
     },
     {
-      id: 13,
-      title: "WAQaskhanApps — Multi-Tool Suite",
-      category: "tools javascript",
-      date: "2025-06",
+      id: 13, title: "WAQaskhanApps — Multi-Tool Suite", category: "tools javascript", date: "2025-06",
       image: "assets/images/my-apps.png",
       infoTitle: "WAQaskhanApps — Multi-Tool Suite",
       infoDesc: "Collection of mini web applications — quotes generator, chatbot, games, Quran app, and more, all in one interactive hub.",
@@ -219,111 +202,56 @@ const portfolioData = {
 
   experience: [
     {
-      date: "Jul 2026 – Present",
-      role: "Application Developer",
-      company: "Zentic Solution",
-      location: "Peshawar, Khyber Pakhtunkhwa, Pakistan",
-      type: "Full-Time",
+      date: "Jul 2026 – Present", role: "Application Developer", company: "Zentic Solution",
+      location: "Peshawar, Khyber Pakhtunkhwa, Pakistan", type: "Full-Time",
       description: "Architect and engineer high-performance cross-platform mobile and desktop applications with native integrations, optimized memory management, and fluid UI rendering. Collaborate closely with engineering teams to build resilient backend microservices, streamline data synchronization, and enforce enterprise-grade security protocols. Conduct rigorous code reviews, automated testing, and performance profiling to ensure zero-downtime deployments and optimal production reliability.",
-      highlights: [
-        "High-performance cross-platform apps with native integrations",
-        "Resilient backend microservices & data synchronization",
-        "Enterprise-grade security protocols & code reviews",
-        "Zero-downtime deployments & production reliability"
-      ],
+      highlights: ["High-performance cross-platform apps with native integrations", "Resilient backend microservices & data synchronization", "Enterprise-grade security protocols & code reviews", "Zero-downtime deployments & production reliability"],
       tech: ["React Native", "Node.js", "Docker", "TypeScript"]
     },
     {
-      date: "Jun 2022 – Present",
-      role: "Team Lead & Founder",
-      company: "TheKhanDev",
-      location: "Peshawar / Islamabad, Pakistan",
-      type: "Remote / Self-Employed",
+      date: "Jun 2022 – Present", role: "Team Lead & Founder", company: "TheKhanDev",
+      location: "Peshawar / Islamabad, Pakistan", type: "Remote / Self-Employed",
       description: "Lead a multidisciplinary engineering squad, directing the end-to-end architecture, development, and delivery of 35+ high-impact digital solutions across MERN Stack, Next.js 14, TypeScript, and Python. Engineered critical performance overhauls: resolved complex N+1 query bottlenecks in MongoDB aggregations, eliminated memory leaks in state management trees, and enforced strict input sanitization to block injection vectors. Re-architected legacy monolithic codebases into modular, testable, and highly maintainable components utilizing Server-Side Rendering (SSR) and Incremental Static Regeneration (ISR).",
-      highlights: [
-        "70% performance improvement across client properties",
-        "Page load times reduced from 4.8s to 1.2s",
-        "95+ Lighthouse scores maintained",
-        "100% on-time project delivery record",
-        "Designed immersive programming curriculums & bootcamps"
-      ],
+      highlights: ["70% performance improvement across client properties", "Page load times reduced from 4.8s to 1.2s", "95+ Lighthouse scores maintained", "100% on-time project delivery record", "Designed immersive programming curriculums & bootcamps"],
       tech: ["Next.js 14", "TypeScript", "MongoDB", "Python", "React"]
     },
     {
-      date: "Apr 2026 – Jul 2026",
-      role: "Web Developer (Internship)",
-      company: "CodeAlpha",
-      location: "Africa (Remote)",
-      type: "Internship",
+      date: "Apr 2026 – Jul 2026", role: "Web Developer (Internship)", company: "CodeAlpha",
+      location: "Africa (Remote)", type: "Internship",
       description: "Developed robust, scalable front-end and back-end modules for distributed web applications, optimizing cross-browser compatibility and API response payloads. Contributed to the enhancement of automated deployment scripts and code quality assurance checks within agile sprint cycles.",
-      highlights: [
-        "Scalable front-end & back-end modules",
-        "Cross-browser compatibility optimization",
-        "Automated deployment scripts",
-        "Agile sprint cycle contributions"
-      ],
+      highlights: ["Scalable front-end & back-end modules", "Cross-browser compatibility optimization", "Automated deployment scripts", "Agile sprint cycle contributions"],
       tech: ["JavaScript", "API", "Agile", "CI/CD"]
     },
     {
-      date: "2026 – Jul 2026",
-      role: "Web Developer",
-      company: "HexSoftwares",
-      location: "Asia (Remote)",
-      type: "Remote",
+      date: "2026 – Jul 2026", role: "Web Developer", company: "HexSoftwares",
+      location: "Asia (Remote)", type: "Remote",
       description: "Built responsive, dynamic user interfaces and integrated secure authentication layers for high-traffic web platforms.",
-      highlights: [
-        "Responsive & dynamic user interfaces",
-        "Secure authentication layers",
-        "High-traffic platform engineering"
-      ],
+      highlights: ["Responsive & dynamic user interfaces", "Secure authentication layers", "High-traffic platform engineering"],
       tech: ["HTML", "CSS", "JavaScript", "Auth"]
     }
   ],
 
   education: [
     {
-      date: "Sep 2024 – Present",
-      role: "Bachelor of Science in Computer Science (B.Sc. CS)",
-      company: "Abasyn University, Peshawar",
-      location: "Peshawar, Pakistan",
+      date: "Sep 2024 – Present", role: "Bachelor of Science in Computer Science (B.Sc. CS)",
+      company: "Abasyn University, Peshawar", location: "Peshawar, Pakistan",
       type: "Currently in 5th Semester",
       description: "Maintaining an exceptional 3.96+ CGPA, focusing heavily on advanced algorithms, database structures, operating systems, and distributed system design. Cross-institutional academic alignment with Harvard University.",
-      highlights: [
-        "3.96+ CGPA (exceptional standing)",
-        "Advanced algorithms & data structures",
-        "Operating systems & distributed systems",
-        "Harvard University academic alignment",
-        "Student Roll No: 25754"
-      ],
+      highlights: ["3.96+ CGPA (exceptional standing)", "Advanced algorithms & data structures", "Operating systems & distributed systems", "Harvard University academic alignment", "Student Roll No: 25754"],
       tech: ["Algorithms", "Databases", "OS", "Distributed Systems"]
     },
     {
-      date: "Completed 2024",
-      role: "Intermediate of Computer Science (ICS)",
-      company: "BISE Malakand",
-      location: "Khyber Pakhtunkhwa, Pakistan",
-      type: "Grade A",
+      date: "Completed 2024", role: "Intermediate of Computer Science (ICS)", company: "BISE Malakand",
+      location: "Khyber Pakhtunkhwa, Pakistan", type: "Grade A",
       description: "Completed Intermediate of Computer Science with an A grade, building strong foundational knowledge in programming, mathematics, and computer systems.",
-      highlights: [
-        "Grade 'A' achievement",
-        "Programming fundamentals",
-        "Mathematical foundations",
-        "Computer systems basics"
-      ],
+      highlights: ["Grade 'A' achievement", "Programming fundamentals", "Mathematical foundations", "Computer systems basics"],
       tech: ["Programming", "Mathematics", "CS Fundamentals"]
     },
     {
-      date: "Completed 2022",
-      role: "Matriculation",
-      company: "BISE Malakand",
-      location: "Khyber Pakhtunkhwa, Pakistan",
-      type: "Grade A",
+      date: "Completed 2022", role: "Matriculation", company: "BISE Malakand",
+      location: "Khyber Pakhtunkhwa, Pakistan", type: "Grade A",
       description: "Completed Matriculation with an A grade, establishing academic excellence and strong analytical foundations.",
-      highlights: [
-        "Grade 'A' achievement",
-        "Analytical foundations",
-        "Academic excellence"
-      ],
+      highlights: ["Grade 'A' achievement", "Analytical foundations", "Academic excellence"],
       tech: ["Science", "Mathematics"]
     }
   ],

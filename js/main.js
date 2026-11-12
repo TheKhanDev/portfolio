@@ -35,18 +35,80 @@ const renderServices = () => {
     </div>`).join('');
 };
 
+/* --- SKILLS: enhanced rendering --- */
+const renderSkillsStats = () => {
+  const el = document.querySelector('.skills-stats');
+  if (!el || !portfolioData.skillsStats) return;
+  el.innerHTML = portfolioData.skillsStats.map(stat => `
+    <div class="skills-stat">
+      <div class="skills-stat-value">
+        <span class="skills-stat-num" data-target="${stat.value}">0</span>${stat.suffix}
+      </div>
+      <div class="skills-stat-label">${stat.label}</div>
+    </div>`).join('');
+
+  // Animate the numbers
+  const animate = () => {
+    el.querySelectorAll('.skills-stat-num').forEach(elNum => {
+      const target = +elNum.dataset.target || 0;
+      const duration = 1500;
+      const start = performance.now();
+      (function step(now) {
+        const t = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 3);
+        elNum.textContent = Math.floor(eased * target);
+        if (t < 1) requestAnimationFrame(step);
+        else elNum.textContent = target;
+      })(start);
+    });
+  };
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animate();
+        io.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  io.observe(el);
+};
+
 const renderSkills = () => {
   const el = document.getElementById('skillsContainer');
   if (!el) return;
-  el.innerHTML = portfolioData.skillsCategories.map(cat => `
-    <div class="skills-category reveal">
-      <h3><i class="${cat.icon}"></i> ${cat.title}</h3>
-      ${cat.skills.map(s => `
-        <div class="skill">
-          <div class="skill-info"><span>${s.name}</span><span>${s.percentage}%</span></div>
-          <div class="skill-bar"><div class="skill-progress" data-width="${s.percentage}"></div></div>
-        </div>`).join('')}
+  el.innerHTML = portfolioData.skillsCategories.map((cat, idx) => `
+    <div class="skills-category accent-${cat.accent || 'blue'} reveal" style="transition-delay:${idx * 100}ms">
+      <div class="skills-category-head">
+        <div class="skills-category-icon"><i class="${cat.icon}"></i></div>
+        <div class="skills-category-meta">
+          <h3>${cat.title}</h3>
+          ${cat.description ? `<p>${cat.description}</p>` : ''}
+        </div>
+      </div>
+      <div class="skills-list">
+        ${cat.skills.map(s => `
+          <div class="skill">
+            <div class="skill-info">
+              <span class="skill-name">
+                ${s.icon ? `<i class="${s.icon}"></i>` : ''}
+                <span>${s.name}</span>
+              </span>
+              <span class="skill-percent">${s.percentage}%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="${s.percentage}"></div>
+            </div>
+          </div>`).join('')}
+      </div>
     </div>`).join('');
+};
+
+const renderToolsChips = () => {
+  const el = document.getElementById('toolsChips');
+  if (!el || !portfolioData.toolsChips) return;
+  el.innerHTML = portfolioData.toolsChips
+    .map(t => `<span class="tool-chip">${t}</span>`).join('');
 };
 
 const renderPortfolioFilters = () => {
@@ -507,7 +569,9 @@ function initProjectToolbar() {
 document.addEventListener('DOMContentLoaded', () => {
   renderSocialLinks();
   renderServices();
+  renderSkillsStats();
   renderSkills();
+  renderToolsChips();
   renderPortfolioFilters();
   renderPortfolioGrid();
   renderExperienceTimeline();

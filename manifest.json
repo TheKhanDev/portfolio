@@ -2,9 +2,59 @@
   "name": "Waqas Khan — Portfolio",
   "short_name": "WK Portfolio",
   "description": "Team Lead & Principal Architect at TheKhanDev. Harvard Certified Full-Stack Systems & AI Engineer.",
-  "start_url": "/",
+  "id": "/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
   "background_color": "#0f172a",
   "theme_color": "#2563eb",
-  "orientation": "portrait-primary"
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["portfolio", "business", "developer", "productivity"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='192' height='192' rx='42' fill='url(%23g)'/%3E%3Ctext x='96' y='124' font-family='Arial,sans-serif' font-size='88' font-weight='900' fill='%23fff' text-anchor='middle'%3EWK%3C/text%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='112' fill='url(%23g)'/%3E%3Ctext x='256' y='330' font-family='Arial,sans-serif' font-size='235' font-weight='900' fill='%23fff' text-anchor='middle'%3EWK%3C/text%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%232563eb'/%3E%3Ctext x='256' y='330' font-family='Arial,sans-serif' font-size='235' font-weight='900' fill='%23fff' text-anchor='middle'%3EWK%3C/text%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Portfolio",
+      "short_name": "Work",
+      "description": "View my projects",
+      "url": "./#portfolio",
+      "icons": [{ "src": "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Crect width='96' height='96' rx='20' fill='%232563eb'/%3E%3Ctext x='48' y='64' font-family='Arial' font-size='40' font-weight='900' fill='%23fff' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E", "sizes": "96x96", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "View CV",
+      "short_name": "CV",
+      "description": "Open my CV",
+      "url": "./CV.html",
+      "icons": [{ "src": "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Crect width='96' height='96' rx='20' fill='%2306b6d4'/%3E%3Ctext x='48' y='64' font-family='Arial' font-size='40' font-weight='900' fill='%23fff' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E", "sizes": "96x96", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch",
+      "url": "./#contact",
+      "icons": [{ "src": "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Crect width='96' height='96' rx='20' fill='%2322c55e'/%3E%3Ctext x='48' y='64' font-family='Arial' font-size='40' font-weight='900' fill='%23fff' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E", "sizes": "96x96", "type": "image/svg+xml" }]
+    }
+  ]
 }
