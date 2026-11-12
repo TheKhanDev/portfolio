@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>CV | Waqas Khan — Team Lead & Principal Architect</title>
 
   <meta name="description" content="Curriculum Vitae of Waqas Khan — Team Lead & Principal Architect at TheKhanDev. Harvard Certified Full-Stack Systems & AI Engineer.">
@@ -34,44 +34,65 @@
 
   <div id="scrollProgress" class="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
 
+  <!-- FIXED NAVBAR -->
   <nav class="navbar" id="navbar" aria-label="CV navigation">
     <div class="container nav-inner">
       <a href="index.html" class="logo">Waqas<span>Khan</span></a>
       <div class="nav-actions">
-        <a href="index.html" class="btn-cv-nav" title="Back to portfolio"><i class="fas fa-arrow-left"></i> Portfolio</a>
-        <button class="btn-cv-nav btn-cv-print" id="printCV" title="Print / Save as PDF"><i class="fas fa-print"></i> Print</button>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon" id="themeIcon"></i></button>
+        <a href="index.html" class="btn-cv-nav" title="Back to portfolio">
+          <i class="fas fa-arrow-left"></i> <span>Portfolio</span>
+        </a>
+        <button class="btn-cv-nav btn-cv-print" id="printCV" title="Print / Save as PDF">
+          <i class="fas fa-print"></i> <span>Print</span>
+        </button>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
       </div>
     </div>
   </nav>
 
   <main class="cv-wrapper">
     <div class="container">
+      
+      <!-- Modern Header -->
       <header class="cv-header reveal" id="cvHeader"></header>
-      <section class="cv-section reveal">
-        <h2 class="cv-section-title"><i class="fas fa-user-tie"></i> Executive Technical Profile</h2>
-        <div class="cv-summary" id="cvSummary"></div>
-      </section>
-      <section class="cv-section reveal">
-        <h2 class="cv-section-title"><i class="fas fa-cogs"></i> Core Technical Competencies</h2>
-        <div class="cv-competencies" id="cvCompetencies"></div>
-      </section>
-      <section class="cv-section reveal">
-        <h2 class="cv-section-title"><i class="fas fa-briefcase"></i> Professional Experience</h2>
-        <div class="cv-experience" id="cvExperience"></div>
-      </section>
-      <section class="cv-section reveal">
-        <h2 class="cv-section-title"><i class="fas fa-rocket"></i> Notable Projects &amp; Engineering Achievements</h2>
-        <div class="cv-projects" id="cvProjects"></div>
-      </section>
-      <section class="cv-section reveal">
-        <h2 class="cv-section-title"><i class="fas fa-graduation-cap"></i> Academic Background &amp; Education</h2>
-        <div class="cv-education" id="cvEducation"></div>
-      </section>
-      <section class="cv-section reveal">
-        <h2 class="cv-section-title"><i class="fas fa-certificate"></i> Certifications &amp; Professional Credentials</h2>
-        <div class="cv-certs" id="cvCerts"></div>
-      </section>
+
+      <!-- Main Content Grid -->
+      <div class="cv-content">
+        
+        <section class="cv-section reveal">
+          <h2 class="cv-section-title"><i class="fas fa-user-tie"></i> Executive Profile</h2>
+          <div class="cv-summary" id="cvSummary"></div>
+        </section>
+
+        <section class="cv-section reveal">
+          <h2 class="cv-section-title"><i class="fas fa-cogs"></i> Core Competencies</h2>
+          <div class="cv-competencies" id="cvCompetencies"></div>
+        </section>
+
+        <section class="cv-section reveal">
+          <h2 class="cv-section-title"><i class="fas fa-briefcase"></i> Professional Experience</h2>
+          <div class="cv-experience" id="cvExperience"></div>
+        </section>
+
+        <section class="cv-section reveal">
+          <h2 class="cv-section-title"><i class="fas fa-rocket"></i> Notable Projects</h2>
+          <div class="cv-projects" id="cvProjects"></div>
+        </section>
+
+        <section class="cv-section reveal">
+          <h2 class="cv-section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+          <div class="cv-education" id="cvEducation"></div>
+        </section>
+
+        <section class="cv-section reveal">
+          <h2 class="cv-section-title"><i class="fas fa-certificate"></i> Certifications</h2>
+          <div class="cv-certs" id="cvCerts"></div>
+        </section>
+
+      </div>
+
       <footer class="cv-footer reveal" id="cvFooter"></footer>
     </div>
   </main>

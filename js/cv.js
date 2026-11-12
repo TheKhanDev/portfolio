@@ -2,6 +2,7 @@
    cv.js — CV page rendering & interactions
    ============================================================ */
 
+/* ---------- Preloader ---------- */
 function cvPreloader() {
   const p = document.getElementById('preloader');
   const pct = document.getElementById('preloaderPercent');
@@ -24,6 +25,7 @@ function cvPreloader() {
   setTimeout(fin, 3000);
 }
 
+/* ---------- Scroll progress ---------- */
 function cvScrollProgress() {
   const p = document.getElementById('scrollProgress');
   if (!p) return;
@@ -33,6 +35,7 @@ function cvScrollProgress() {
   }, { passive: true });
 }
 
+/* ---------- Reveal ---------- */
 function cvReveal() {
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
@@ -44,6 +47,7 @@ function cvReveal() {
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 }
 
+/* ---------- Navbar scrolled ---------- */
 function cvNavScroll() {
   const nav = document.getElementById('navbar');
   if (!nav) return;
@@ -52,6 +56,7 @@ function cvNavScroll() {
   }, { passive: true });
 }
 
+/* ---------- Back to top ---------- */
 function cvBackToTop() {
   const btn = document.getElementById('cvTop');
   if (!btn) return;
@@ -63,10 +68,12 @@ function cvBackToTop() {
   });
 }
 
+/* ---------- Theme ---------- */
 function cvTheme() {
   const toggle = document.getElementById('themeToggle');
   const icon = document.getElementById('themeIcon');
   const meta = document.getElementById('metaThemeColor');
+
   const setTheme = (dark) => {
     document.body.classList.toggle('dark-mode', dark);
     if (icon) {
@@ -82,6 +89,7 @@ function cvTheme() {
   });
 }
 
+/* ---------- Placeholder fallback ---------- */
 function cvPlaceholder(text, w = 400, h = 400) {
   const safe = String(text).replace(/[<>&"']/g, c => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;', "'": '&#39;' }[c]));
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
@@ -95,14 +103,18 @@ function cvPlaceholder(text, w = 400, h = 400) {
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 }
 
+/* ---------- Render: Header ---------- */
 function renderCVHeader() {
   const el = document.getElementById('cvHeader');
   if (!el) return;
   const h = cvData.header;
+  
+  // Format contact pills
   const contacts = h.contacts.map(c => `
     <a href="${c.href}" target="${c.href.startsWith('http') ? '_blank' : '_self'}" rel="noopener">
-      <i class="${c.icon}"></i> ${c.label}
+      <i class="${c.icon}"></i> <span>${c.label}</span>
     </a>`).join('');
+
   el.innerHTML = `
     <div class="cv-photo">
       <img src="${h.photo}" alt="${h.name}" onerror="this.src='${cvPlaceholder('WK')}'">
@@ -115,12 +127,14 @@ function renderCVHeader() {
     </div>`;
 }
 
+/* ---------- Render: Summary ---------- */
 function renderCVSummary() {
   const el = document.getElementById('cvSummary');
   if (!el) return;
   el.innerHTML = cvData.summary.map(p => `<p>${p}</p>`).join('');
 }
 
+/* ---------- Render: Competencies ---------- */
 function renderCVCompetencies() {
   const el = document.getElementById('cvCompetencies');
   if (!el) return;
@@ -131,6 +145,7 @@ function renderCVCompetencies() {
     </div>`).join('');
 }
 
+/* ---------- Render: Experience ---------- */
 function renderCVExperience() {
   const el = document.getElementById('cvExperience');
   if (!el) return;
@@ -145,28 +160,33 @@ function renderCVExperience() {
     </div>`).join('');
 }
 
+/* ---------- Render: Projects ---------- */
 function renderCVProjects() {
   const el = document.getElementById('cvProjects');
   if (!el) return;
   el.innerHTML = cvData.projects.map(p => {
-    const liveBtn = p.liveUrl
-      ? `<a href="${p.liveUrl}" target="_blank" rel="noopener" class="link-live">
-           <i class="fas fa-external-link-alt"></i> Live Demo
-         </a>`
-      : '';
-    const privateNote = !p.liveUrl
-      ? `<span class="link-private"><i class="fas fa-lock"></i> Private</span>`
-      : '';
+    const links = [];
+    if (p.liveUrl) {
+      links.push(`<a href="${p.liveUrl}" target="_blank" rel="noopener" class="link-live">
+        <i class="fas fa-external-link-alt"></i> Live Demo
+      </a>`);
+    }
+    if (p.githubUrl) {
+      links.push(`<a href="${p.githubUrl}" target="_blank" rel="noopener" class="link-source">
+        <i class="fab fa-github"></i> Source
+      </a>`);
+    }
     return `
     <div class="cv-project ${p.featured ? 'featured' : ''}">
       <h3 class="cv-project-title">${p.title}</h3>
       <p class="cv-project-desc">${p.description}</p>
       <div class="cv-project-tech">${p.tech.map(t => `<span>${t}</span>`).join('')}</div>
-      <div class="cv-project-links">${liveBtn}${privateNote}</div>
+      <div class="cv-project-links">${links.join('')}</div>
     </div>`;
   }).join('');
 }
 
+/* ---------- Render: Education ---------- */
 function renderCVEducation() {
   const el = document.getElementById('cvEducation');
   if (!el) return;
@@ -181,6 +201,7 @@ function renderCVEducation() {
     </div>`).join('');
 }
 
+/* ---------- Render: Certifications ---------- */
 function renderCVCerts() {
   const el = document.getElementById('cvCerts');
   if (!el) return;
@@ -195,6 +216,7 @@ function renderCVCerts() {
     </div>`).join('');
 }
 
+/* ---------- Render: Footer ---------- */
 function renderCVFooter() {
   const el = document.getElementById('cvFooter');
   if (!el) return;
@@ -202,15 +224,21 @@ function renderCVFooter() {
     <p>${cvData.footer.text}</p>
     <p style="margin-top:0.4rem;">📧 <strong>${cvData.footer.contact}</strong></p>
     <div class="cv-actions">
-      <a href="index.html" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
-      <button class="btn btn-secondary" onclick="window.print()"><i class="fas fa-print"></i> Save as PDF</button>
+      <a href="index.html" class="btn btn-primary">
+        <i class="fas fa-arrow-left"></i> Back to Portfolio
+      </a>
+      <button class="btn btn-secondary" onclick="window.print()">
+        <i class="fas fa-print"></i> Save as PDF
+      </button>
     </div>`;
 }
 
+/* ---------- Print button ---------- */
 function bindPrintButton() {
   document.getElementById('printCV')?.addEventListener('click', () => window.print());
 }
 
+/* ---------- Boot ---------- */
 document.addEventListener('DOMContentLoaded', () => {
   cvPreloader();
   cvScrollProgress();

@@ -1132,16 +1132,38 @@
 .modal-private i { color: var(--primary-color); }
 
 /* ============ TOAST ============ */
+/* ============ TOAST ============ */
 .toast {
-  position: fixed; bottom: 2rem; left: 50%;
+  position: fixed; 
+  bottom: 2rem; 
+  left: 50%;
   transform: translate(-50%, 150%);
-  background: var(--card-bg); border-left: 4px solid var(--primary-color);
-  padding: 1rem 1.5rem; border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-lg); z-index: 3000;
-  transition: transform 0.4s ease; max-width: 90%;
-  font-weight: 500; display: flex; align-items: center; gap: 0.6rem;
+  background: var(--card-bg); 
+  border-left: 4px solid var(--primary-color);
+  padding: 1rem 1.5rem; 
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg); 
+  z-index: 3000;
+  transition: transform 0.4s ease; 
+  max-width: 90%;
+  font-weight: 500; 
+  display: flex; 
+  align-items: center; 
+  gap: 0.6rem;
+  
+  /* ADD THESE TWO LINES TO HIDE IT BY DEFAULT */
+  opacity: 0;
+  visibility: hidden;
 }
-.toast.show { transform: translate(-50%, 0); }
+
+/* When the .show class is added, it becomes visible */
+.toast.show { 
+  transform: translate(-50%, 0); 
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Rest of the toast styles */
 .toast.success { border-left-color: var(--success); }
 .toast.error { border-left-color: var(--error); }
 .toast i { font-size: 1.2rem; }
@@ -1255,6 +1277,7 @@ img[data-fallback] { animation: none; }
 
 /* ============ OFFLINE BADGE ============ */
 .offline-badge {
+  visibility: hidden;
   position: fixed;
   top: calc(var(--nav-height) + 0.75rem);
   left: 50%;
@@ -1277,6 +1300,7 @@ img[data-fallback] { animation: none; }
 .offline-badge.visible {
   transform: translate(-50%, 0);
   opacity: 1;
+  visibility: visible;
 }
 .offline-badge i { font-size: 0.75rem; }
 
